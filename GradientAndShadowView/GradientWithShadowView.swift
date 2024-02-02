@@ -15,11 +15,6 @@ final class GradientWithShadowView: UIView {
         super.layoutSubviews()
         
         setupGradientLayer()
-        
-        layer.shadowColor = UIColor.systemGray.cgColor
-        layer.shadowRadius = 5
-        layer.shadowOpacity = 1
-        layer.shadowOffset = CGSize(width: 0, height: 8)
     }
     
     private func setupGradientLayer() {
@@ -33,6 +28,13 @@ final class GradientWithShadowView: UIView {
         gradientLayer.drawsAsynchronously = false
         
         layer.addSublayer(gradientLayer)
+    }
+    
+    private func setupShadow() {
+        layer.shadowColor = UIColor.systemGray.cgColor
+        layer.shadowRadius = 5
+        layer.shadowOpacity = 1
+        layer.shadowOffset = CGSize(width: 0, height: 8)
     }
     
 }
